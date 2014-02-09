@@ -1,0 +1,28 @@
+!!! 5
+%html
+  %head
+    = display_meta_tags site: site_title_helper, reverse: true
+    %meta{ name:'viewport', content:'width=device-width, initial-scale=1.0' }
+    = stylesheet_link_tag    'application', media: 'all',
+                                            data: {'turbolinks-track' => true}
+    = csrf_meta_tags
+    = content_for :head
+
+  %body
+    .container
+      - flash.each do |type, msg|
+        .alert{ class: "alert-#{type == :notice ? 'success' : 'danger'}" }
+          %button.close{ type: 'button',
+                         data: { dismiss: 'alert'},
+                         'aria-hidden' => 'true'}
+            &times;
+
+          = msg.gsub("\n", '<br>').html_safe
+
+      = page_heading_helper
+
+      = yield
+
+    #load-javascripts
+      = javascript_include_tag 'application'
+      = content_for :javascripts
