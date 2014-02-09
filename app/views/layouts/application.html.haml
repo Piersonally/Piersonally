@@ -10,6 +10,8 @@
 
   %body
     .container
+      = render 'layouts/navbar'
+
       - flash.each do |type, msg|
         .alert{ class: "alert-#{type == :notice ? 'success' : 'danger'}" }
           %button.close{ type: 'button',
