@@ -48,3 +48,4 @@ gem 'spring',        group: :development
 
 gem 'haml-rails'
 gem 'bootstrap-sass'
+gem 'meta-tags', require: 'meta_tags'
