@@ -51,3 +51,9 @@ gem 'bootstrap-sass'
 gem 'meta-tags', require: 'meta_tags'
 gem 'quiet_assets'
 gem 'rails_bootstrap_navbar'
+
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn', :require => false
+end
