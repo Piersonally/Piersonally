@@ -37,3 +37,5 @@ role :db,  %w{sam@piersonally.com}
 #     # password: 'please use keys'
 #   }
 # setting per server overrides global ssh_options
+
+set :ssh_options, { :port => 1966 }
