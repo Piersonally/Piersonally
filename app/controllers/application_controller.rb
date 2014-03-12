@@ -5,9 +5,19 @@ class ApplicationController < ActionController::Base
 
   force_ssl if: :ssl_configured?
 
+  before_filter :wrap_site_in_basic_auth if
+    Rails.application.secrets['basic_auth_username']
+
   private
 
   def ssl_configured?
     !Rails.env.development?
+  end
+
+  def wrap_site_in_basic_auth
+    authenticate_or_request_with_http_basic do |user_name, password|
+      user_name == Rails.application.secrets['basic_auth_username'] &&
+       password == Rails.application.secrets['basic_auth_password']
+    end
   end
 end
