@@ -52,6 +52,7 @@ gem 'meta-tags', require: 'meta_tags'
 gem 'quiet_assets'
 gem 'rails_bootstrap_navbar'
 gem 'simple_form', '~> 3.1.0.rc1'
+gem 'foreigner'
 
 group :development do
   gem 'capistrano'

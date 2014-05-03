@@ -54,6 +54,8 @@ GEM
     coffee-script-source (1.7.0)
     erubis (2.7.0)
     execjs (2.0.2)
+    foreigner (1.6.1)
+      activerecord (>= 3.0.0)
     gem_config (0.2.4)
     haml (4.0.5)
       tilt
@@ -75,11 +77,11 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    meta-tags (1.5.0)
-      actionpack
+    meta-tags (2.0.0)
+      actionpack (>= 3.0.0)
     mime-types (1.25.1)
     minitest (5.3.3)
-    multi_json (1.9.2)
+    multi_json (1.9.3)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.8.0)
@@ -168,6 +170,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano3-unicorn
   coffee-rails (~> 4.0.0)
+  foreigner
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
