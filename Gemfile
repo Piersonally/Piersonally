@@ -61,4 +61,5 @@ group :development do
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn', :require => false
+  gem 'capistrano-sidekiq', :require => false
 end
