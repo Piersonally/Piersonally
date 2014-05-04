@@ -11,6 +11,15 @@ GIT
       sidetiq
       simple_form (= 3.1.0.rc1)
 
+GIT
+  remote: git://github.com/tobiassvn/sidetiq.git
+  revision: 4f7d7daea3873443b17bf2f3da61619532bbeba2
+  specs:
+    sidetiq (0.5.0)
+      celluloid (>= 0.14.1)
+      ice_cube (~> 0.11.0)
+      sidekiq (>= 2.16.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -152,10 +161,6 @@ GEM
       json
       redis (>= 3.0.6)
       redis-namespace (>= 1.3.1)
-    sidetiq (0.5.0)
-      celluloid (>= 0.14.1)
-      ice_cube (~> 0.11.0)
-      sidekiq (>= 2.16.0)
     simple_form (3.1.0.rc1)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -217,7 +222,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   sidekiq
-  sidetiq
+  sidetiq!
   simple_form (~> 3.1.0.rc1)
   spring
   turbolinks

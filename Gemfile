@@ -54,7 +54,7 @@ gem 'rails_bootstrap_navbar'
 gem 'simple_form', '~> 3.1.0.rc1'
 gem 'foreigner'
 gem 'sidekiq'
-gem 'sidetiq'
+gem 'sidetiq', github: 'tobiassvn/sidetiq'
 gem 'wow', github: 'Piersonally/wow'
 
 group :development do
