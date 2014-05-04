@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/Piersonally/wow.git
-  revision: 095fe8a6f85f885eff85494b6328b2baa79746ad
+  revision: 8c8d1babc5651a67a4a274a2502b9c0f42a3ba6c
   specs:
     wow (0.0.1)
       foreigner
