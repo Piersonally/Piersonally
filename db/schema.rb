@@ -11,9 +11,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140504053260) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "wow_auction_snapshots", force: true do |t|
+    t.integer  "auction_id"
+    t.string   "time_left"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "bid",        limit: 8
+  end
+
+  add_index "wow_auction_snapshots", ["auction_id"], name: "index_wow_auction_snapshots_on_auction_id", using: :btree
+
+  create_table "wow_auctions", force: true do |t|
+    t.integer  "realm_id"
+    t.string   "auction_house"
+    t.integer  "item"
+    t.string   "owner"
+    t.string   "owner_realm"
+    t.integer  "quantity"
+    t.integer  "rand"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "auc",           limit: 8
+    t.integer  "buyout",        limit: 8
+    t.integer  "seed",          limit: 8
+  end
+
+  add_index "wow_auctions", ["auc"], name: "index_wow_auctions_on_auc", using: :btree
+  add_index "wow_auctions", ["item"], name: "index_wow_auctions_on_item", using: :btree
+  add_index "wow_auctions", ["owner", "owner_realm"], name: "index_wow_auctions_on_owner_and_owner_realm", using: :btree
+  add_index "wow_auctions", ["realm_id"], name: "index_wow_auctions_on_realm_id", using: :btree
+
+  create_table "wow_realms", force: true do |t|
+    t.string   "slug"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "polling_enabled", default: false
+    t.datetime "last_checked_at"
+    t.datetime "last_synced_at"
+  end
+
+  add_index "wow_realms", ["polling_enabled"], name: "index_wow_realms_on_polling_enabled", using: :btree
+
+  add_foreign_key "wow_auction_snapshots", "wow_auctions", name: "wow_auction_snapshots_auction_id_fk", column: "auction_id"
+
+  add_foreign_key "wow_auctions", "wow_realms", name: "wow_auctions_realm_id_fk", column: "realm_id"
 
 end
