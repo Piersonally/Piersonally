@@ -56,6 +56,7 @@ gem 'foreigner'
 gem 'sidekiq'
 gem 'sidetiq', github: 'tobiassvn/sidetiq'
 gem 'wow', github: 'Piersonally/wow'
+gem 'sinatra', '>= 1.3.0', :require => nil # for sidekiq web
 
 group :development do
   gem 'capistrano'
