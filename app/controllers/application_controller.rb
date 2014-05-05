@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :wrap_site_in_basic_auth if
     Rails.application.secrets['basic_auth_username']
+  before_filter :set_timezone
 
   private
 
@@ -19,5 +20,9 @@ class ApplicationController < ActionController::Base
       user_name == Rails.application.secrets['basic_auth_username'] &&
        password == Rails.application.secrets['basic_auth_password']
     end
+  end
+
+  def set_timezone
+    Time.zone = 'US/Pacific'
   end
 end
