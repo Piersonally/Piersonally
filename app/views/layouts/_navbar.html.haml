@@ -2,5 +2,6 @@
   = navbar_group do
     = navbar_item "Home", root_path
     = navbar_dropdown "WoW" do
+      = navbar_item "Home", wow_home_path
       = navbar_item "Realms", wow_realms_path
       = navbar_item "Auctions", wow_auctions_path
