@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/Piersonally/wow.git
-  revision: 57934253fafe901e3d5ae532ea60165e9e09e1e5
+  revision: 1dc19f9e48a4e02aa14ba833a0d6748ae2390ee0
   specs:
-    wow (0.0.3)
+    wow (0.0.4)
       foreigner
       haml-rails
       httparty
@@ -56,6 +56,9 @@ GEM
     bootstrap-sass (3.1.0.2)
       sass (~> 3.2)
     builder (3.2.2)
+    byebug (3.1.2)
+      columnize (~> 0.8)
+      debugger-linecache (~> 1.2)
     capistrano (3.1.0)
       i18n
       rake (>= 10.0.0)
@@ -80,7 +83,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    columnize (0.8.9)
     connection_pool (2.0.0)
+    debugger-linecache (1.2.0)
     erubis (2.7.0)
     execjs (2.0.2)
     foreigner (1.6.1)
@@ -217,6 +222,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
+  byebug
   capistrano
   capistrano-rails
   capistrano-sidekiq
