@@ -66,4 +66,5 @@ group :development do
   gem 'capistrano3-unicorn', :require => false
   gem 'capistrano-sidekiq', :require => false
   gem 'byebug'
+  gem 'awesome_print'
 end
