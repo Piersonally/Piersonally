@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/Piersonally/wow.git
-  revision: 87a611e977605be6ade0a074d942ea5f41de6811
+  revision: 603e9416caa046fb6d1ad32d744ea6ad9bcf9bed
   specs:
-    wow (0.1.5)
+    wow (0.1.6)
       foreigner
       haml-rails
       httparty
