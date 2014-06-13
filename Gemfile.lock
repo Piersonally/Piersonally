@@ -1,8 +1,9 @@
 GIT
   remote: git://github.com/Piersonally/wow.git
-  revision: b6f595af571273ba7ab06506932c246c5bed6952
+  revision: 27601c577e62af1ba78b80e3707fdcfe31efe33c
   specs:
-    wow (0.1.7)
+    wow (0.1.8)
+      coderay
       foreigner
       haml-rails
       httparty
@@ -16,11 +17,11 @@ GIT
 
 GIT
   remote: git://github.com/tobiassvn/sidetiq.git
-  revision: 4f7d7daea3873443b17bf2f3da61619532bbeba2
+  revision: b1021d8cf18bec22740b1184272ec4a0fbd03ea2
   specs:
-    sidetiq (0.5.0)
+    sidetiq (0.6.1)
       celluloid (>= 0.14.1)
-      ice_cube (~> 0.11.0)
+      ice_cube (~> 0.12.0)
       sidekiq (>= 2.16.0)
 
 GEM
@@ -79,6 +80,7 @@ GEM
       capistrano (>= 3.1.0)
     celluloid (0.15.2)
       timers (~> 1.1.0)
+    coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -107,7 +109,7 @@ GEM
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.6.9)
-    ice_cube (0.11.3)
+    ice_cube (0.12.0)
     jbuilder (2.0.6)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
