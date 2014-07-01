@@ -59,6 +59,8 @@ gem 'wow', github: 'Piersonally/wow'
 # gem 'wow', path: '../wow'
 gem 'sinatra', '>= 1.3.0', :require => nil # for sidekiq web
 gem 'newrelic_rpm'
+gem 'devise'
+# gem 'omniauth-google-oauth2'
 
 group :development do
   gem 'capistrano'
