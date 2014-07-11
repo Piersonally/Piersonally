@@ -23,3 +23,7 @@ body {
   color: white;
 }
 
+// Fix navbar-right margin in inverse mode.
+.navbar-nav.navbar-right:last-child {
+  margin-right: 0;
+}
