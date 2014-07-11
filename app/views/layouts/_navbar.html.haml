@@ -1,8 +1,17 @@
-= navbar brand: "Piersonally", brand_link: root_path, class: 'navbar-inverse' do
-  = navbar_group do
-    = navbar_item "Home", root_path
-    = navbar_dropdown "WoW" do
-      = navbar_item "Home", wow_home_path
-      = navbar_item "Realms", wow_realms_path
-      = navbar_item "Items", wow_items_path
-      = navbar_item "Auctions", in_progress_wow_auctions_path
+= navbar class: 'navbar-inverse' do
+  = navbar_header brand: "Piersonally", brand_link: root_path
+  = navbar_collapse do
+    = navbar_group do
+      = navbar_item "Home", root_path
+      - if user_signed_in?
+        = navbar_dropdown "WoW" do
+          = navbar_item "Home", wow_home_path
+          = navbar_item "Realms", wow_realms_path
+          = navbar_item "Items", wow_items_path
+          = navbar_item "Auctions", in_progress_wow_auctions_path
+    = navbar_group align: 'right' do
+      - if user_signed_in?
+        = navbar_dropdown current_user.email do
+          = navbar_item "Log Out", destroy_user_session_path, {}, 'data-method' => :delete
+      - else
+        = navbar_item "Log In", user_omniauth_authorize_path(:google_oauth2)
