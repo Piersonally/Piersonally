@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :trackable,
          :omniauthable, :omniauth_providers => [:google_oauth2]
 
+  include Wow::UserExtensions
+
   def self.from_omniauth(auth)
     if user = User.find_by_email(auth.info.email)
       user.provider = auth.provider

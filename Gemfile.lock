@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/Piersonally/wow.git
-  revision: 242a7e36413c620f587a643db06b4ed3e2a4a172
+  revision: 0a261246f08d548d5f0d3d5c97bbff77041d306c
   specs:
-    wow (0.1.9)
+    wow (0.2.0)
       coderay
       foreigner
       haml-rails
@@ -219,7 +219,7 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
-    searchkick (0.7.8)
+    searchkick (0.7.9)
       activemodel
       elasticsearch (~> 0.4.11)
       hashie

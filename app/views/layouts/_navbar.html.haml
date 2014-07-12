@@ -9,6 +9,7 @@
           = navbar_item "Realms", wow_realms_path
           = navbar_item "Items", wow_items_path
           = navbar_item "Auctions", in_progress_wow_auctions_path
+          = navbar_item "Toons", wow_toons_path
     = navbar_group align: 'right' do
       - if user_signed_in?
         = navbar_dropdown current_user.email do

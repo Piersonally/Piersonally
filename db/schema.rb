@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140710153411) do
+ActiveRecord::Schema.define(version: 20140712153921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,6 +108,17 @@ ActiveRecord::Schema.define(version: 20140710153411) do
 
   add_index "wow_realms", ["polling_enabled"], name: "index_wow_realms_on_polling_enabled", using: :btree
 
+  create_table "wow_toons", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "realm_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "wow_toons", ["realm_id"], name: "index_wow_toons_on_realm_id", using: :btree
+  add_index "wow_toons", ["user_id"], name: "index_wow_toons_on_user_id", using: :btree
+
   add_foreign_key "wow_auction_snapshots", "wow_auctions", name: "wow_auction_snapshots_auction_id_fk", column: "auction_id"
   add_foreign_key "wow_auction_snapshots", "wow_realm_syncs", name: "wow_auction_snapshots_realm_sync_id_fk", column: "realm_sync_id"
 
@@ -116,5 +127,8 @@ ActiveRecord::Schema.define(version: 20140710153411) do
   add_foreign_key "wow_auctions", "wow_realms", name: "wow_auctions_realm_id_fk", column: "realm_id"
 
   add_foreign_key "wow_realm_syncs", "wow_realms", name: "wow_realm_syncs_realm_id_fk", column: "realm_id"
+
+  add_foreign_key "wow_toons", "users", name: "wow_toons_user_id_fk"
+  add_foreign_key "wow_toons", "wow_realms", name: "wow_toons_realm_id_fk", column: "realm_id"
 
 end
