@@ -124,6 +124,8 @@ GEM
       railties (>= 4.0.1)
     hashie (3.1.0)
     hike (1.2.3)
+    hipchat (1.2.0)
+      httparty
     httparty (0.13.1)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
@@ -286,6 +288,7 @@ DEPENDENCIES
   devise
   foreigner
   haml-rails
+  hipchat
   jbuilder (~> 2.0)
   jquery-rails
   meta-tags
