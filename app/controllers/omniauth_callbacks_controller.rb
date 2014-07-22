@@ -5,6 +5,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if user.persisted?
       flash.notice = "Successfully signed in Through Google!"
       sign_in_and_redirect user
+      Events::UserLoggedIn.create actor: user
     else
       flash.alert = "There was a problem signing you in."
       redirect_to root_url
