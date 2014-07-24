@@ -62,6 +62,7 @@ gem 'newrelic_rpm'
 gem 'devise'
 gem 'omniauth-google-oauth2'
 gem 'hipchat'
+gem 'airbrake'
 
 group :development do
   gem 'capistrano'
