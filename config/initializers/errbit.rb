@@ -4,3 +4,8 @@ Airbrake.configure do |config|
   config.port    = 443
   config.secure  = config.port == 443
 end
+
+# Errbit error catching for Sidekiq workers
+Sidekiq.configure_server do |config|
+  config.error_handlers << Proc.new { |ex,ctx_hash| Airbrake.notify(ex, ctx_hash) }
+end
