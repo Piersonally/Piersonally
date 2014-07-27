@@ -45,7 +45,8 @@ namespace :deploy do
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
     #end
-    invoke 'unicorn:stop' # unicorn is restarted by launchd
+    invoke 'unicorn:reload'
+    # invoke 'unicorn:stop' # unicorn is restarted by launchd
   end
 
   after :publishing, :restart
