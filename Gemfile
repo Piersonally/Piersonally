@@ -71,4 +71,5 @@ group :development do
   gem 'capistrano-sidekiq', :require => false
   gem 'byebug'
   gem 'awesome_print'
+  gem 'annotate'
 end
