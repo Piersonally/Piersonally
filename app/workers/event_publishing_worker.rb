@@ -3,8 +3,8 @@ class EventPublishingWorker
 
   def perform(event_id)
     begin
-      event = Event.find event_id
-      publish_event event
+      @event = Event.find event_id
+      publish_event
     rescue ActiveRecord::RecordNotFound
       # ignore
     end
@@ -12,8 +12,18 @@ class EventPublishingWorker
 
   private
 
-  def publish_event(event)
-    hipchat_api['Piersonally'].send "piersonally.com", event.in_english
+  def publish_event
+    hipchat_api['Piersonally'].send "piersonally.com", @event.in_english, color: color
+  end
+
+  def color
+    case @event.metadata[:log_level]
+    when :alert ; 'red'
+    when :info  ; 'green'
+    when :debug ; 'gray'
+    else
+      'yellow'
+    end
   end
 
   def hipchat_api

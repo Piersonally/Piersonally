@@ -19,5 +19,13 @@ module Events
     def in_english
       notes
     end
+
+    def should_publish?
+      if metadata[:log_level]
+        [:info, :alert].include? metadata[:log_level]
+      else
+        true
+      end
+    end
   end
 end

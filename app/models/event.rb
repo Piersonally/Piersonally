@@ -29,10 +29,14 @@ class Event < ActiveRecord::Base
     message
   end
 
+  def should_publish? # Override in subclasses
+    false
+  end
+
   private
 
   def enqueue_for_publication
-    EventPublishingWorker.perform_in 30.seconds, self.id
+    EventPublishingWorker.perform_in 30.seconds, self.id if should_publish?
   end
 
   def english_event_name

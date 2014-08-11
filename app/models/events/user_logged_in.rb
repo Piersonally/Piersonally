@@ -21,5 +21,9 @@ module Events
     def in_english
       "#{actor.username} (#{actor.email}) logged in"
     end
+
+    def should_publish?
+      true
+    end
   end
 end
