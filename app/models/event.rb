@@ -10,11 +10,14 @@
 #  notes        :text
 #  created_at   :datetime
 #  updated_at   :datetime
+#  metadata     :text             default("--- {}\n")
 #
 
 class Event < ActiveRecord::Base
   belongs_to :actor, class_name: 'User'
   belongs_to :subject, polymorphic: true
+
+  serialize :metadata
 
   after_create :enqueue_for_publication
 
