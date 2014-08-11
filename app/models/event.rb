@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id           :integer          not null, primary key
+#  type         :string(255)
+#  actor_id     :integer
+#  subject_id   :integer
+#  subject_type :string(255)
+#  notes        :text
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
 class Event < ActiveRecord::Base
   belongs_to :actor, class_name: 'User'
   belongs_to :subject, polymorphic: true
