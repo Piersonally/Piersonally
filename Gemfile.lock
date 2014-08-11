@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/Piersonally/wow.git
-  revision: c8d23886ef08db5b625c186ee0d9d2a8281104f3
+  revision: 4fb1c8164d35afc943c35d42d7ff4766d340788c
   specs:
-    wow (0.2.2)
+    wow (0.2.3)
       coderay
       foreigner
       haml-rails
@@ -264,7 +264,7 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (2.2.1)
       coffee-rails
-    tzinfo (1.2.1)
+    tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.4.0)
       execjs (>= 0.3.0)
